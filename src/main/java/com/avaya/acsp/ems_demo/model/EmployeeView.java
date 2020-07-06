@@ -2,22 +2,9 @@ package com.avaya.acsp.ems_demo.model;
 
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-
 import com.avaya.acsp.ems_demo.enums.EmployeeStatus;
 
-@Entity
-@Table(name = "employee")
-public class Employee {
+public class EmployeeView {
 	private int empId;
 	private String firstName;
 	private String lastName;
@@ -25,33 +12,32 @@ public class Employee {
 	private String address;
 	private EmployeeStatus employeeStatus;
 	private Date updatedDate;
-	private Department department;
+	private int deptId;
 
-	public Employee() {
+	public EmployeeView() {
 	}
 
-	public Employee(String firstName, String lastName, String emailId, String address, EmployeeStatus employeeStatus,
-			Date updatedDate) {
+	public EmployeeView(int empId, String firstName, String lastName, String emailId, String address,
+			EmployeeStatus employeeStatus, Date updatedDate, int deptId) {
+		super();
+		this.empId = empId;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.emailId = emailId;
 		this.address = address;
 		this.employeeStatus = employeeStatus;
 		this.updatedDate = updatedDate;
+		this.deptId = deptId;
 	}
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "emp_id")
 	public int getEmpId() {
 		return empId;
 	}
 
-	public void setEmpId(int id) {
-		this.empId = id;
+	public void setEmpId(int empId) {
+		this.empId = empId;
 	}
 
-	@Column(name = "first_name")
 	public String getFirstName() {
 		return firstName;
 	}
@@ -60,7 +46,6 @@ public class Employee {
 		this.firstName = firstName;
 	}
 
-	@Column(name = "last_name")
 	public String getLastName() {
 		return lastName;
 	}
@@ -69,7 +54,6 @@ public class Employee {
 		this.lastName = lastName;
 	}
 
-	@Column(name = "email_id")
 	public String getEmailId() {
 		return emailId;
 	}
@@ -78,7 +62,6 @@ public class Employee {
 		this.emailId = emailId;
 	}
 
-	@Column(name = "address")
 	public String getAddress() {
 		return address;
 	}
@@ -87,17 +70,14 @@ public class Employee {
 		this.address = address;
 	}
 
-	@Enumerated(EnumType.STRING)
-	@Column(name = "status")
 	public EmployeeStatus getEmployeeStatus() {
 		return employeeStatus;
 	}
 
-	public void setEmployeeStatus(EmployeeStatus status) {
-		this.employeeStatus = status;
+	public void setEmployeeStatus(EmployeeStatus employeeStatus) {
+		this.employeeStatus = employeeStatus;
 	}
 
-	@Column(name = "updated_on")
 	public Date getUpdatedDate() {
 		return updatedDate;
 	}
@@ -106,19 +86,17 @@ public class Employee {
 		this.updatedDate = updatedDate;
 	}
 
-	@ManyToOne
-	@JoinColumn(name = "dept_Id")
-	public Department getDepartment() {
-		return department;
+	public int getDeptId() {
+		return deptId;
 	}
 
-	public void setDepartment(Department department) {
-		this.department = department;
+	public void setDeptId(int deptId) {
+		this.deptId = deptId;
 	}
 
 	@Override
 	public String toString() {
-		return "Employee [empId=" + empId + ", firstName=" + firstName + ", lastName=" + lastName + ", emailId="
+		return "EmployeeView [empId=" + empId + ", firstName=" + firstName + ", lastName=" + lastName + ", emailId="
 				+ emailId + "]";
 	}
 }

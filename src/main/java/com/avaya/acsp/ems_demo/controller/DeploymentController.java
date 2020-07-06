@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -40,8 +42,16 @@ public class DeploymentController {
 	}
 
 	@PostMapping
-	public Department createDepartment(@Validated @RequestBody Department department) {
+	public Department createDepartment(@Validated @RequestBody Department department, HttpServletResponse response) {
+		response.setStatus(201);
 		return departmentRepository.save(department);
+	}
+
+	@PostMapping("/all")
+	public List<Department> createAllDepartments(@Validated @RequestBody List<Department> departments,
+			HttpServletResponse response) {
+		response.setStatus(201);
+		return departmentRepository.saveAll(departments);
 	}
 
 	@PutMapping("/{id}")
