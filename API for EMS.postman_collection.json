@@ -1,0 +1,402 @@
+{
+	"info": {
+		"_postman_id": "12ac3113-056b-4b3d-a52c-95f495d5a161",
+		"name": "API for EMS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/api/v1/employees/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NDA0MDcwNiwiaWF0IjoxNTk0MDIyNzA2fQ.U9j6xQJOx0vJa_jLJ3ALyQU5i9zWL6aYj8csrPTStdePKC09UyhwcGgqxydq0E1UjBV3BI4M7A_q0gzl7dtuxQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/employees/9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"employees",
+						"9"
+					]
+				},
+				"description": "API to delete an Employee from the organization."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/employees/all",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "2b92c2f0-f0f7-4652-9950-b8ef87499b13",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NDA0MDcwNiwiaWF0IjoxNTk0MDIyNzA2fQ.U9j6xQJOx0vJa_jLJ3ALyQU5i9zWL6aYj8csrPTStdePKC09UyhwcGgqxydq0E1UjBV3BI4M7A_q0gzl7dtuxQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/employees/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"employees",
+						"all"
+					]
+				},
+				"description": "API for getting all the employees in the organisation."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/employees/all",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "2b92c2f0-f0f7-4652-9950-b8ef87499b13",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NDA0MDcwNiwiaWF0IjoxNTk0MDIyNzA2fQ.U9j6xQJOx0vJa_jLJ3ALyQU5i9zWL6aYj8csrPTStdePKC09UyhwcGgqxydq0E1UjBV3BI4M7A_q0gzl7dtuxQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n\t{\r\n        \"firstName\": \"Santosh\",\r\n        \"lastName\": \"Yadav\",\r\n        \"emailId\": \"santosh.yadav@gmail.com\",\r\n        \"address\": \"Mumbai\",\r\n        \"employeeStatus\": \"ACTIVE\",\r\n        \"updatedDate\": \"2020-07-03T00:00:00.000+00:00\",\r\n\t\t\"deptId\" : 101\r\n    }\r\n\t,\r\n\t{\r\n        \"firstName\": \"Albert\",\r\n        \"lastName\": \"Einstein\",\r\n        \"emailId\": \"albert.einstein@gmail.com\",\r\n        \"address\": \"Pune\",\r\n        \"employeeStatus\": \"ACTIVE\",\r\n        \"updatedDate\": \"2020-07-03T00:00:00.000+00:00\",\r\n\t\t\"deptId\" : 102\r\n    }\r\n\t,\r\n    {\r\n        \"firstName\": \"John\",\r\n        \"lastName\": \"Bell\",\r\n        \"emailId\": \"john.bell@gmail.com\",\r\n        \"address\": \"Mumbai\",\r\n        \"employeeStatus\": \"ACTIVE\",\r\n        \"updatedDate\": \"2020-07-03T00:00:00.000+00:00\",\r\n\t\t\"deptId\" : 101\r\n    }\r\n\t,\r\n    {\r\n        \"firstName\": \"Sheldon\",\r\n        \"lastName\": \"Cooper\",\r\n        \"emailId\": \"sheldon.cooper@gmail.com\",\r\n        \"address\": \"Bangalore\",\r\n        \"employeeStatus\": \"ACTIVE\",\r\n        \"updatedDate\": \"2020-07-03T00:00:00.000+00:00\",\r\n\t\t\"deptId\" : 102\r\n    }\r\n\t,\r\n\t{\r\n        \"firstName\": \"Leonard\",\r\n        \"lastName\": \"Hofstader\",\r\n        \"emailId\": \"leonard.hofstader@gmail.com\",\r\n        \"address\": \"Bangalore\",\r\n        \"employeeStatus\": \"ACTIVE\",\r\n        \"updatedDate\": \"2020-07-03T00:00:00.000+00:00\",\r\n\t\t\"deptId\" : 103\r\n    }\r\n\t,\r\n    {\r\n        \"firstName\": \"Chandler\",\r\n        \"lastName\": \"Bing\",\r\n        \"emailId\": \"chandler.bing@gmail.com\",\r\n        \"address\": \"Bangalore\",\r\n        \"employeeStatus\": \"ACTIVE\",\r\n        \"updatedDate\": \"2020-07-03T00:00:00.000+00:00\",\r\n\t\t\"deptId\" : 104\r\n    }\r\n\t,\r\n    {\r\n        \"firstName\": \"Joey\",\r\n        \"lastName\": \"Tribbiani\",\r\n        \"emailId\": \"joey.tribbiani@gmail.com\",\r\n        \"address\": \"Delhi\",\r\n        \"employeeStatus\": \"ACTIVE\",\r\n        \"updatedDate\": \"2020-07-03T00:00:00.000+00:00\",\r\n\t\t\"deptId\" : 103\r\n    }\r\n\t,\r\n    {\r\n        \"firstName\": \"Ross\",\r\n        \"lastName\": \"Geller\",\r\n        \"emailId\": \"ross.geller@gmail.com\",\r\n        \"address\": \"Delhi\",\r\n        \"employeeStatus\": \"ACTIVE\",\r\n        \"updatedDate\": \"2020-07-03T00:00:00.000+00:00\",\r\n\t\t\"deptId\" : 104\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/employees/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"employees",
+						"all"
+					]
+				},
+				"description": "API to save a list of Employees in the organisation."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/employees",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "2b92c2f0-f0f7-4652-9950-b8ef87499b13",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NDA0MDcwNiwiaWF0IjoxNTk0MDIyNzA2fQ.U9j6xQJOx0vJa_jLJ3ALyQU5i9zWL6aYj8csrPTStdePKC09UyhwcGgqxydq0E1UjBV3BI4M7A_q0gzl7dtuxQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n\t{\r\n        \"firstName\": \"Howard\",\r\n        \"lastName\": \"Wolowitz\",\r\n        \"emailId\": \"howard.wolowitz@gmail.com\",\r\n        \"address\": \"Mumbai\",\r\n        \"employeeStatus\": \"ACTIVE\",\r\n        \"updatedDate\": \"2020-07-06T00:00:00.000+00:00\",\r\n\t\t    \"deptId\" : 104\r\n    }\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/employees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"employees"
+					]
+				},
+				"description": "API to store a single employee in the organisation"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/employees",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "2b92c2f0-f0f7-4652-9950-b8ef87499b13",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NDA0MDcwNiwiaWF0IjoxNTk0MDIyNzA2fQ.U9j6xQJOx0vJa_jLJ3ALyQU5i9zWL6aYj8csrPTStdePKC09UyhwcGgqxydq0E1UjBV3BI4M7A_q0gzl7dtuxQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/employees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"employees"
+					]
+				},
+				"description": "API to get list of employees who has joined or left the organisation for the current day(i.e. TODAY)"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/departments/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NDA0MDcwNiwiaWF0IjoxNTk0MDIyNzA2fQ.U9j6xQJOx0vJa_jLJ3ALyQU5i9zWL6aYj8csrPTStdePKC09UyhwcGgqxydq0E1UjBV3BI4M7A_q0gzl7dtuxQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/departments/104",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"departments",
+						"104"
+					]
+				},
+				"description": "API to delete a department from the organisation"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/departments/all",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NDA0MDcwNiwiaWF0IjoxNTk0MDIyNzA2fQ.U9j6xQJOx0vJa_jLJ3ALyQU5i9zWL6aYj8csrPTStdePKC09UyhwcGgqxydq0E1UjBV3BI4M7A_q0gzl7dtuxQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"deptId\": 101,\r\n        \"deptName\": \"HR\"\r\n    }\r\n\t,\r\n    {\r\n        \"deptId\": 102,\r\n        \"deptName\": \"R&D\"\r\n    }\r\n\t,\r\n    {\r\n        \"deptId\": 103,\r\n        \"deptName\": \"Marketing\"\r\n    }\r\n\t,\r\n    {\r\n        \"deptId\": 104,\r\n        \"deptName\": \"Account\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/departments/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"departments",
+						"all"
+					]
+				},
+				"description": "API to add a list of departments in the organization"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/departments",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NDA0MDcwNiwiaWF0IjoxNTk0MDIyNzA2fQ.U9j6xQJOx0vJa_jLJ3ALyQU5i9zWL6aYj8csrPTStdePKC09UyhwcGgqxydq0E1UjBV3BI4M7A_q0gzl7dtuxQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n    {\r\n        \"deptId\": 104,\r\n        \"deptName\": \"Account\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/departments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"departments"
+					]
+				},
+				"description": "API to add a department in the organisation"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/departments/all",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NDA0MDcwNiwiaWF0IjoxNTk0MDIyNzA2fQ.U9j6xQJOx0vJa_jLJ3ALyQU5i9zWL6aYj8csrPTStdePKC09UyhwcGgqxydq0E1UjBV3BI4M7A_q0gzl7dtuxQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/departments/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"departments",
+						"all"
+					]
+				},
+				"description": "API to get all the departments in the organisation"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/authenticate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"admin\",\r\n    \"password\" : \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"authenticate"
+					]
+				},
+				"description": "Authenticating and generating the token."
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

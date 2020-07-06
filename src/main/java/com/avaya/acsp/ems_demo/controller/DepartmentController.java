@@ -24,11 +24,11 @@ import com.avaya.acsp.ems_demo.repository.DepartmentRepository;
 
 @RestController
 @RequestMapping("/api/v1/departments")
-public class DeploymentController {
+public class DepartmentController {
 	@Autowired
 	private DepartmentRepository departmentRepository;
 
-	@GetMapping
+	@GetMapping("/all")
 	public List<Department> getAllDepartments() {
 		return departmentRepository.findAll();
 	}
