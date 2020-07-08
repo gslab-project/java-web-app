@@ -34,7 +34,7 @@ import com.avaya.acsp.ems_demo.repository.DepartmentRepository;
 import com.avaya.acsp.ems_demo.repository.EmployeeRepository;
 
 @RestController
-@RequestMapping("/api/v1/emsservice/employees")
+@RequestMapping("/api/v1/employees")
 public class EmployeeController {
 	@Autowired
 	private EmployeeRepository employeeRepository;

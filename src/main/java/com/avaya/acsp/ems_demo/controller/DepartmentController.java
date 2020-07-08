@@ -23,7 +23,7 @@ import com.avaya.acsp.ems_demo.model.Department;
 import com.avaya.acsp.ems_demo.repository.DepartmentRepository;
 
 @RestController
-@RequestMapping("/api/v1/emsservice/departments")
+@RequestMapping("/api/v1/departments")
 public class DepartmentController {
 	@Autowired
 	private DepartmentRepository departmentRepository;

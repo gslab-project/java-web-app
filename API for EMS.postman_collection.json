@@ -1,33 +1,34 @@
 {
 	"info": {
-		"_postman_id": "12ac3113-056b-4b3d-a52c-95f495d5a161",
+		"_postman_id": "e27a2b1c-7cf8-4120-8325-b8746dc14033",
 		"name": "API for EMS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "http://localhost:8080/api/v1/employees/{id}",
+			"name": "http://localhost:8080/emsservice/api/v1/employees/{id}",
 			"request": {
 				"method": "DELETE",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NDA0MDcwNiwiaWF0IjoxNTk0MDIyNzA2fQ.U9j6xQJOx0vJa_jLJ3ALyQU5i9zWL6aYj8csrPTStdePKC09UyhwcGgqxydq0E1UjBV3BI4M7A_q0gzl7dtuxQ",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NDIxMDE0NiwiaWF0IjoxNTk0MTkyMTQ2fQ.n8lbHHPJ8htZ0s1bR6479BBqGLgx4n4v3aDclknLCPE2YqHbOGPOboCu0fIR-2PAYBL5WRcxklGCcuPNF9oQYw",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/api/v1/employees/9",
+					"raw": "http://localhost:8080/emsservice/api/v1/employees/8",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"emsservice",
 						"api",
 						"v1",
 						"employees",
-						"9"
+						"8"
 					]
 				},
 				"description": "API to delete an Employee from the organization."
@@ -35,12 +36,12 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/api/v1/employees/all",
+			"name": "http://localhost:8080/emsservice/api/v1/employees/all",
 			"event": [
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "2b92c2f0-f0f7-4652-9950-b8ef87499b13",
+						"id": "9bffafc2-4c93-4917-ae91-127b048134a6",
 						"exec": [
 							""
 						],
@@ -56,18 +57,19 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NDA0MDcwNiwiaWF0IjoxNTk0MDIyNzA2fQ.U9j6xQJOx0vJa_jLJ3ALyQU5i9zWL6aYj8csrPTStdePKC09UyhwcGgqxydq0E1UjBV3BI4M7A_q0gzl7dtuxQ",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NDIxMDE0NiwiaWF0IjoxNTk0MTkyMTQ2fQ.n8lbHHPJ8htZ0s1bR6479BBqGLgx4n4v3aDclknLCPE2YqHbOGPOboCu0fIR-2PAYBL5WRcxklGCcuPNF9oQYw",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/api/v1/employees/all",
+					"raw": "http://localhost:8080/emsservice/api/v1/employees/all",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"emsservice",
 						"api",
 						"v1",
 						"employees",
@@ -79,12 +81,12 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/api/v1/employees/all",
+			"name": "http://localhost:8080/emsservice/api/v1/employees/all",
 			"event": [
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "2b92c2f0-f0f7-4652-9950-b8ef87499b13",
+						"id": "3c11636c-f1e2-4659-955f-01fb356736cf",
 						"exec": [
 							""
 						],
@@ -100,7 +102,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NDA0MDcwNiwiaWF0IjoxNTk0MDIyNzA2fQ.U9j6xQJOx0vJa_jLJ3ALyQU5i9zWL6aYj8csrPTStdePKC09UyhwcGgqxydq0E1UjBV3BI4M7A_q0gzl7dtuxQ",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NDIxMDE0NiwiaWF0IjoxNTk0MTkyMTQ2fQ.n8lbHHPJ8htZ0s1bR6479BBqGLgx4n4v3aDclknLCPE2YqHbOGPOboCu0fIR-2PAYBL5WRcxklGCcuPNF9oQYw",
 						"type": "text"
 					}
 				],
@@ -114,13 +116,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/v1/employees/all",
+					"raw": "http://localhost:8080/emsservice/api/v1/employees/all",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"emsservice",
 						"api",
 						"v1",
 						"employees",
@@ -132,12 +135,12 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/api/v1/employees",
+			"name": "http://localhost:8080/emsservice/api/v1/employees",
 			"event": [
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "2b92c2f0-f0f7-4652-9950-b8ef87499b13",
+						"id": "9da0312a-d9c7-492a-8f60-8cbfdafeddf6",
 						"exec": [
 							""
 						],
@@ -153,7 +156,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NDA0MDcwNiwiaWF0IjoxNTk0MDIyNzA2fQ.U9j6xQJOx0vJa_jLJ3ALyQU5i9zWL6aYj8csrPTStdePKC09UyhwcGgqxydq0E1UjBV3BI4M7A_q0gzl7dtuxQ",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NDIxMDE0NiwiaWF0IjoxNTk0MTkyMTQ2fQ.n8lbHHPJ8htZ0s1bR6479BBqGLgx4n4v3aDclknLCPE2YqHbOGPOboCu0fIR-2PAYBL5WRcxklGCcuPNF9oQYw",
 						"type": "text"
 					}
 				],
@@ -167,13 +170,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/v1/employees",
+					"raw": "http://localhost:8080/emsservice/api/v1/employees",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"emsservice",
 						"api",
 						"v1",
 						"employees"
@@ -184,12 +188,12 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/api/v1/employees",
+			"name": "http://localhost:8080/emsservice/api/v1/employees",
 			"event": [
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "2b92c2f0-f0f7-4652-9950-b8ef87499b13",
+						"id": "dd3bdc2a-09af-4b6c-bc65-1f3a600490e6",
 						"exec": [
 							""
 						],
@@ -205,18 +209,19 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NDA0MDcwNiwiaWF0IjoxNTk0MDIyNzA2fQ.U9j6xQJOx0vJa_jLJ3ALyQU5i9zWL6aYj8csrPTStdePKC09UyhwcGgqxydq0E1UjBV3BI4M7A_q0gzl7dtuxQ",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NDIxMDE0NiwiaWF0IjoxNTk0MTkyMTQ2fQ.n8lbHHPJ8htZ0s1bR6479BBqGLgx4n4v3aDclknLCPE2YqHbOGPOboCu0fIR-2PAYBL5WRcxklGCcuPNF9oQYw",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/api/v1/employees",
+					"raw": "http://localhost:8080/emsservice/api/v1/employees",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"emsservice",
 						"api",
 						"v1",
 						"employees"
@@ -227,24 +232,25 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/api/v1/departments/{id}",
+			"name": "http://localhost:8080/emsservice/api/v1/departments/{id}",
 			"request": {
 				"method": "DELETE",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NDA0MDcwNiwiaWF0IjoxNTk0MDIyNzA2fQ.U9j6xQJOx0vJa_jLJ3ALyQU5i9zWL6aYj8csrPTStdePKC09UyhwcGgqxydq0E1UjBV3BI4M7A_q0gzl7dtuxQ",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NDIxMDE0NiwiaWF0IjoxNTk0MTkyMTQ2fQ.n8lbHHPJ8htZ0s1bR6479BBqGLgx4n4v3aDclknLCPE2YqHbOGPOboCu0fIR-2PAYBL5WRcxklGCcuPNF9oQYw",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/api/v1/departments/104",
+					"raw": "http://localhost:8080/emsservice/api/v1/departments/104",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"emsservice",
 						"api",
 						"v1",
 						"departments",
@@ -256,7 +262,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/api/v1/departments/all",
+			"name": "http://localhost:8080/emsservice/api/v1/departments/all",
 			"protocolProfileBehavior": {
 				"disabledSystemHeaders": {}
 			},
@@ -265,8 +271,8 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NDA0MDcwNiwiaWF0IjoxNTk0MDIyNzA2fQ.U9j6xQJOx0vJa_jLJ3ALyQU5i9zWL6aYj8csrPTStdePKC09UyhwcGgqxydq0E1UjBV3BI4M7A_q0gzl7dtuxQ",
-						"type": "text"
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NDIxMDE0NiwiaWF0IjoxNTk0MTkyMTQ2fQ.n8lbHHPJ8htZ0s1bR6479BBqGLgx4n4v3aDclknLCPE2YqHbOGPOboCu0fIR-2PAYBL5WRcxklGCcuPNF9oQYw"
 					}
 				],
 				"body": {
@@ -279,13 +285,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/v1/departments/all",
+					"raw": "http://localhost:8080/emsservice/api/v1/departments/all",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"emsservice",
 						"api",
 						"v1",
 						"departments",
@@ -297,7 +304,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/api/v1/departments",
+			"name": "http://localhost:8080/emsservice/api/v1/departments",
 			"protocolProfileBehavior": {
 				"disabledSystemHeaders": {}
 			},
@@ -306,7 +313,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NDA0MDcwNiwiaWF0IjoxNTk0MDIyNzA2fQ.U9j6xQJOx0vJa_jLJ3ALyQU5i9zWL6aYj8csrPTStdePKC09UyhwcGgqxydq0E1UjBV3BI4M7A_q0gzl7dtuxQ",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NDIxMDE0NiwiaWF0IjoxNTk0MTkyMTQ2fQ.n8lbHHPJ8htZ0s1bR6479BBqGLgx4n4v3aDclknLCPE2YqHbOGPOboCu0fIR-2PAYBL5WRcxklGCcuPNF9oQYw",
 						"type": "text"
 					}
 				],
@@ -320,13 +327,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/v1/departments",
+					"raw": "http://localhost:8080/emsservice/api/v1/departments",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"emsservice",
 						"api",
 						"v1",
 						"departments"
@@ -337,7 +345,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/api/v1/departments/all",
+			"name": "http://localhost:8080/emsservice/api/v1/departments/all",
 			"protocolProfileBehavior": {
 				"disabledSystemHeaders": {}
 			},
@@ -346,18 +354,19 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NDA0MDcwNiwiaWF0IjoxNTk0MDIyNzA2fQ.U9j6xQJOx0vJa_jLJ3ALyQU5i9zWL6aYj8csrPTStdePKC09UyhwcGgqxydq0E1UjBV3BI4M7A_q0gzl7dtuxQ",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NDIwNzU5MCwiaWF0IjoxNTk0MTg5NTkwfQ.-G4GAm_SYJ9EF_mP01u9aWIjT8TIaywiFEOT17zDLLNy-jvpIXw-om6ku-SpIOT9NoCzeMjH9UxJxI-JeWORFA",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/api/v1/departments/all",
+					"raw": "http://localhost:8080/emsservice/api/v1/departments/all",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"emsservice",
 						"api",
 						"v1",
 						"departments",
@@ -369,7 +378,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/authenticate",
+			"name": "http://localhost:8080/emsservice/authenticate",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -383,13 +392,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/authenticate",
+					"raw": "http://localhost:8080/emsservice/authenticate",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"emsservice",
 						"authenticate"
 					]
 				},
