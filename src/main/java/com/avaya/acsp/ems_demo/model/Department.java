@@ -2,6 +2,8 @@ package com.avaya.acsp.ems_demo.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -14,12 +16,12 @@ public class Department {
 	public Department() {
 	}
 
-	public Department(int deptId, String deptName) {
-		this.deptId = deptId;
+	public Department(String deptName) {
 		this.deptName = deptName;
 	}
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "dept_id")
 	public int getDeptId() {
 		return deptId;
@@ -29,7 +31,7 @@ public class Department {
 		this.deptId = dept_id;
 	}
 
-	@Column(name = "dept_name")
+	@Column(name = "dept_name", unique = true)
 	public String getDeptName() {
 		return deptName;
 	}

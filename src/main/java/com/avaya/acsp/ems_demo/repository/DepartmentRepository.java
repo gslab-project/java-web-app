@@ -7,5 +7,5 @@ import com.avaya.acsp.ems_demo.model.Department;
 
 @Repository
 public interface DepartmentRepository extends JpaRepository<Department, Integer> {
-
+	Department findByDeptName(String deptName);
 }

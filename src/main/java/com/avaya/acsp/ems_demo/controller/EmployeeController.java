@@ -9,7 +9,6 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -77,14 +76,13 @@ public class EmployeeController {
 	@PostMapping
 	public Employee createEmployee(@Validated @RequestBody EmployeeView employeeView, HttpServletResponse response)
 			throws ResourceNotFoundException {
-		Optional<Department> departmentOpt = departmentRepository.findById(employeeView.getDeptId());
-		if (!departmentOpt.isPresent()) {
+		Department department = departmentRepository.findByDeptName(employeeView.getDeptName());
+		if (department == null) {
 			throw new ResourceNotFoundException("Department not found");
 		}
 		Employee employee = new Employee(employeeView.getFirstName(), employeeView.getLastName(),
 				employeeView.getEmailId(), employeeView.getAddress(), employeeView.getEmployeeStatus(),
 				employeeView.getUpdatedDate());
-		Department department = departmentOpt.get();
 		employee.setDepartment(department);
 		response.setStatus(201);
 		return employeeRepository.save(employee);
@@ -96,14 +94,13 @@ public class EmployeeController {
 		List<Employee> employees = new LinkedList<>();
 
 		for (EmployeeView employeeView : employeeViews) {
-			Optional<Department> departmentOpt = departmentRepository.findById(employeeView.getDeptId());
-			if (!departmentOpt.isPresent()) {
+			Department department = departmentRepository.findByDeptName(employeeView.getDeptName());
+			if (department == null) {
 				throw new ResourceNotFoundException("Department not found");
 			}
 			Employee employee = new Employee(employeeView.getFirstName(), employeeView.getLastName(),
 					employeeView.getEmailId(), employeeView.getAddress(), employeeView.getEmployeeStatus(),
 					employeeView.getUpdatedDate());
-			Department department = departmentOpt.get();
 			employee.setDepartment(department);
 
 			employees.add(employee);

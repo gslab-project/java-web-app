@@ -12,13 +12,13 @@ public class EmployeeView {
 	private String address;
 	private EmployeeStatus employeeStatus;
 	private Date updatedDate;
-	private int deptId;
+	private String deptName;
 
 	public EmployeeView() {
 	}
 
 	public EmployeeView(int empId, String firstName, String lastName, String emailId, String address,
-			EmployeeStatus employeeStatus, Date updatedDate, int deptId) {
+			EmployeeStatus employeeStatus, Date updatedDate, String deptName) {
 		super();
 		this.empId = empId;
 		this.firstName = firstName;
@@ -27,7 +27,7 @@ public class EmployeeView {
 		this.address = address;
 		this.employeeStatus = employeeStatus;
 		this.updatedDate = updatedDate;
-		this.deptId = deptId;
+		this.deptName = deptName;
 	}
 
 	public int getEmpId() {
@@ -86,12 +86,12 @@ public class EmployeeView {
 		this.updatedDate = updatedDate;
 	}
 
-	public int getDeptId() {
-		return deptId;
+	public String getDeptName() {
+		return deptName;
 	}
 
-	public void setDeptId(int deptId) {
-		this.deptId = deptId;
+	public void setDeptName(String deptName) {
+		this.deptName = deptName;
 	}
 
 	@Override
