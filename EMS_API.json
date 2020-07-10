@@ -1,34 +1,31 @@
 {
 	"info": {
-		"_postman_id": "e27a2b1c-7cf8-4120-8325-b8746dc14033",
+		"_postman_id": "3a486f5d-9998-427d-8bb1-670cda37a9b9",
 		"name": "API for EMS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "http://localhost:8080/emsservice/api/v1/employees/{id}",
+			"name": "delete employees",
 			"request": {
 				"method": "DELETE",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NDM4MzM0MCwiaWF0IjoxNTk0MzY1MzQwfQ.zs5iktcZIDiokBQXxTmXJpw3DBYVa9R775Q4-Bds1tH3Wf71HAMfAKBmRqZlU3EU4MuhgIukJxOy_2yOXf9aWw",
+						"value": "Bearer {{token}}",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/emsservice/api/v1/employees/8",
-					"protocol": "http",
+					"raw": "{{base_url}}/api/v1/employees/{{employee_id}}",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "8080",
 					"path": [
-						"emsservice",
 						"api",
 						"v1",
 						"employees",
-						"8"
+						"{{employee_id}}"
 					]
 				},
 				"description": "API to delete an Employee from the organization."
@@ -36,12 +33,12 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/emsservice/api/v1/employees/all",
+			"name": "get all employees",
 			"event": [
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "9bffafc2-4c93-4917-ae91-127b048134a6",
+						"id": "61ab4b62-8e96-49df-a9ee-6bdd8219b90d",
 						"exec": [
 							""
 						],
@@ -57,19 +54,16 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NDM4MzM0MCwiaWF0IjoxNTk0MzY1MzQwfQ.zs5iktcZIDiokBQXxTmXJpw3DBYVa9R775Q4-Bds1tH3Wf71HAMfAKBmRqZlU3EU4MuhgIukJxOy_2yOXf9aWw",
+						"value": "Bearer {{token}}",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/emsservice/api/v1/employees/all",
-					"protocol": "http",
+					"raw": "{{base_url}}/api/v1/employees/all",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "8080",
 					"path": [
-						"emsservice",
 						"api",
 						"v1",
 						"employees",
@@ -81,12 +75,12 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/emsservice/api/v1/employees/all",
+			"name": "add many employees",
 			"event": [
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "3c11636c-f1e2-4659-955f-01fb356736cf",
+						"id": "f81ea095-c4ed-4628-86be-69b713105489",
 						"exec": [
 							""
 						],
@@ -102,7 +96,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NDM4MzM0MCwiaWF0IjoxNTk0MzY1MzQwfQ.zs5iktcZIDiokBQXxTmXJpw3DBYVa9R775Q4-Bds1tH3Wf71HAMfAKBmRqZlU3EU4MuhgIukJxOy_2yOXf9aWw",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NDA0MDcwNiwiaWF0IjoxNTk0MDIyNzA2fQ.U9j6xQJOx0vJa_jLJ3ALyQU5i9zWL6aYj8csrPTStdePKC09UyhwcGgqxydq0E1UjBV3BI4M7A_q0gzl7dtuxQ",
 						"type": "text"
 					}
 				],
@@ -116,14 +110,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/emsservice/api/v1/employees/all",
-					"protocol": "http",
+					"raw": "{{base_url}}/api/v1/employees/all",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "8080",
 					"path": [
-						"emsservice",
 						"api",
 						"v1",
 						"employees",
@@ -135,13 +126,25 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/emsservice/api/v1/employees",
+			"name": "add employee",
 			"event": [
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "9da0312a-d9c7-492a-8f60-8cbfdafeddf6",
+						"id": "e1cf92c7-6d24-4175-8f10-9d6ebea38afa",
 						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "fd5d10b1-0082-47d2-87de-8d27db49151a",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"employee_id\", jsonData.empId);",
 							""
 						],
 						"type": "text/javascript"
@@ -156,13 +159,13 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NDM4MzM0MCwiaWF0IjoxNTk0MzY1MzQwfQ.zs5iktcZIDiokBQXxTmXJpw3DBYVa9R775Q4-Bds1tH3Wf71HAMfAKBmRqZlU3EU4MuhgIukJxOy_2yOXf9aWw",
+						"value": "Bearer {{token}}",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "\r\n{\r\n        \"firstName\": \"Howard\",\r\n        \"lastName\": \"Wolowitz\",\r\n        \"emailId\": \"howard.wolowitz@gmail.com\",\r\n        \"address\": \"Mumbai\",\r\n        \"employeeStatus\": \"ACTIVE\",\r\n        \"updatedDate\": \"2020-07-06T00:00:00.000+00:00\",\r\n        \"deptName\" : \"Training\"\r\n}\r\n",
+					"raw": "\r\n\t{\r\n        \"firstName\": \"Jimmi\",\r\n        \"lastName\": \"Sweeny\",\r\n        \"emailId\": \"Jimmi.Sweeny@gmail.com\",\r\n        \"address\": \"Mumbai\",\r\n        \"employeeStatus\": \"ACTIVE\",\r\n        \"updatedDate\": \"2020-07-06T00:00:00.000+00:00\",\r\n\t\t    \"deptId\" : 104\r\n    }\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -170,14 +173,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/emsservice/api/v1/employees",
-					"protocol": "http",
+					"raw": "{{base_url}}/api/v1/employees",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "8080",
 					"path": [
-						"emsservice",
 						"api",
 						"v1",
 						"employees"
@@ -188,12 +188,75 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/emsservice/api/v1/employees",
+			"name": "update employee",
 			"event": [
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "dd3bdc2a-09af-4b6c-bc65-1f3a600490e6",
+						"id": "a41097ee-a472-4737-9220-fb9d5f857a5b",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "208e2e21-dccf-4ccc-a5c4-9b057d1fcfad",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"employee_id\", jsonData.empId);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n\t{\r\n        \"firstName\": \"Jimmi\",\r\n        \"lastName\": \"Sweeny\",\r\n        \"emailId\": \"Jimmi.Sweeny@gmail.com\",\r\n        \"address\": \"Mumbai\",\r\n        \"employeeStatus\": \"INACTIVE\",\r\n        \"updatedDate\": \"2020-07-06T00:00:00.000+00:00\",\r\n\t\t    \"deptId\" : 104\r\n    }\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/employees/{{employee_id}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employees",
+						"{{employee_id}}"
+					]
+				},
+				"description": "API to store a single employee in the organisation"
+			},
+			"response": []
+		},
+		{
+			"name": "get updated employees",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "e2f35478-2f5e-4c27-8eda-670e7327f819",
 						"exec": [
 							""
 						],
@@ -209,19 +272,16 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NDM4MzM0MCwiaWF0IjoxNTk0MzY1MzQwfQ.zs5iktcZIDiokBQXxTmXJpw3DBYVa9R775Q4-Bds1tH3Wf71HAMfAKBmRqZlU3EU4MuhgIukJxOy_2yOXf9aWw",
+						"value": "Bearer {{token}}",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/emsservice/api/v1/employees",
-					"protocol": "http",
+					"raw": "{{base_url}}/api/v1/employees",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "8080",
 					"path": [
-						"emsservice",
 						"api",
 						"v1",
 						"employees"
@@ -232,29 +292,26 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/emsservice/api/v1/departments/{id}",
+			"name": "delete department",
 			"request": {
 				"method": "DELETE",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NDM4MzM0MCwiaWF0IjoxNTk0MzY1MzQwfQ.zs5iktcZIDiokBQXxTmXJpw3DBYVa9R775Q4-Bds1tH3Wf71HAMfAKBmRqZlU3EU4MuhgIukJxOy_2yOXf9aWw",
+						"value": "Bearer {{token}}",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/emsservice/api/v1/departments/104",
-					"protocol": "http",
+					"raw": "{{base_url}}/api/v1/departments/{{department_id}}",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "8080",
 					"path": [
-						"emsservice",
 						"api",
 						"v1",
 						"departments",
-						"104"
+						"{{department_id}}"
 					]
 				},
 				"description": "API to delete a department from the organisation"
@@ -262,7 +319,19 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/emsservice/api/v1/departments/all",
+			"name": "Add many departments",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "167e250b-2228-445b-997e-3971abde168e",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"protocolProfileBehavior": {
 				"disabledSystemHeaders": {}
 			},
@@ -271,13 +340,13 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"type": "text",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NDM4MzM0MCwiaWF0IjoxNTk0MzY1MzQwfQ.zs5iktcZIDiokBQXxTmXJpw3DBYVa9R775Q4-Bds1tH3Wf71HAMfAKBmRqZlU3EU4MuhgIukJxOy_2yOXf9aWw"
+						"value": "Bearer {{token}}",
+						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "[\r\n    {\r\n        \"deptName\": \"HR\"\r\n    }\r\n\t,\r\n    {\r\n        \"deptName\": \"R&D\"\r\n    }\r\n\t,\r\n    {\r\n        \"deptName\": \"Marketing\"\r\n    }\r\n\t,\r\n    {\r\n        \"deptName\": \"Account\"\r\n    }\r\n]",
+					"raw": "[\r\n    {\r\n        \"deptId\": 101,\r\n        \"deptName\": \"HR\"\r\n    }\r\n\t,\r\n    {\r\n        \"deptId\": 102,\r\n        \"deptName\": \"R&D\"\r\n    }\r\n\t,\r\n    {\r\n        \"deptId\": 103,\r\n        \"deptName\": \"Marketing\"\r\n    }\r\n\t,\r\n    {\r\n        \"deptId\": 104,\r\n        \"deptName\": \"Account\"\r\n    }\r\n]",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -285,15 +354,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/emsservice/api/v1/departments/all",
-					"protocol": "http",
+					"raw": "{{base_url}}api/v1/departments/all",
 					"host": [
-						"localhost"
+						"{{base_url}}api"
 					],
-					"port": "8080",
 					"path": [
-						"emsservice",
-						"api",
 						"v1",
 						"departments",
 						"all"
@@ -304,7 +369,21 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/emsservice/api/v1/departments",
+			"name": "Add department",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6f08c7f9-24a3-43c4-8ef0-86dbbd92c62b",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"department_id\", jsonData.deptId);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"protocolProfileBehavior": {
 				"disabledSystemHeaders": {}
 			},
@@ -313,13 +392,13 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NDM4MzM0MCwiaWF0IjoxNTk0MzY1MzQwfQ.zs5iktcZIDiokBQXxTmXJpw3DBYVa9R775Q4-Bds1tH3Wf71HAMfAKBmRqZlU3EU4MuhgIukJxOy_2yOXf9aWw",
+						"value": "Bearer {{token}}",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "\r\n    {\r\n        \"deptName\": \"Training\"\r\n    }",
+					"raw": "\r\n    {\r\n        \"deptId\": 105,\r\n        \"deptName\": \"Account\"\r\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -327,14 +406,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/emsservice/api/v1/departments",
-					"protocol": "http",
+					"raw": "{{base_url}}/api/v1/departments",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "8080",
 					"path": [
-						"emsservice",
 						"api",
 						"v1",
 						"departments"
@@ -345,7 +421,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/emsservice/api/v1/departments/all",
+			"name": "Get All departments",
 			"protocolProfileBehavior": {
 				"disabledSystemHeaders": {}
 			},
@@ -354,19 +430,16 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NDM4MzM0MCwiaWF0IjoxNTk0MzY1MzQwfQ.zs5iktcZIDiokBQXxTmXJpw3DBYVa9R775Q4-Bds1tH3Wf71HAMfAKBmRqZlU3EU4MuhgIukJxOy_2yOXf9aWw",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NDA0MDcwNiwiaWF0IjoxNTk0MDIyNzA2fQ.U9j6xQJOx0vJa_jLJ3ALyQU5i9zWL6aYj8csrPTStdePKC09UyhwcGgqxydq0E1UjBV3BI4M7A_q0gzl7dtuxQ",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/emsservice/api/v1/departments/all",
-					"protocol": "http",
+					"raw": "{{base_url}}/api/v1/departments/all",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "8080",
 					"path": [
-						"emsservice",
 						"api",
 						"v1",
 						"departments",
@@ -378,7 +451,21 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/emsservice/authenticate",
+			"name": "authenticate",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "34d510e5-da59-4e65-9f0b-948d293e6b88",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -392,14 +479,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/emsservice/authenticate",
-					"protocol": "http",
+					"raw": "{{base_url}}/authenticate",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "8080",
 					"path": [
-						"emsservice",
 						"authenticate"
 					]
 				},
