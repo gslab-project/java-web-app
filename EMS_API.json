@@ -96,13 +96,13 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NDA0MDcwNiwiaWF0IjoxNTk0MDIyNzA2fQ.U9j6xQJOx0vJa_jLJ3ALyQU5i9zWL6aYj8csrPTStdePKC09UyhwcGgqxydq0E1UjBV3BI4M7A_q0gzl7dtuxQ",
+						"value": "Bearer {{token}}",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "[\r\n\t{\r\n        \"firstName\": \"Santosh\",\r\n        \"lastName\": \"Yadav\",\r\n        \"emailId\": \"santosh.yadav@gmail.com\",\r\n        \"address\": \"Mumbai\",\r\n        \"employeeStatus\": \"ACTIVE\",\r\n        \"updatedDate\": \"2020-07-03T00:00:00.000+00:00\",\r\n\t\t\"deptId\" : 101\r\n    }\r\n\t,\r\n\t{\r\n        \"firstName\": \"Albert\",\r\n        \"lastName\": \"Einstein\",\r\n        \"emailId\": \"albert.einstein@gmail.com\",\r\n        \"address\": \"Pune\",\r\n        \"employeeStatus\": \"ACTIVE\",\r\n        \"updatedDate\": \"2020-07-03T00:00:00.000+00:00\",\r\n\t\t\"deptId\" : 102\r\n    }\r\n\t,\r\n    {\r\n        \"firstName\": \"John\",\r\n        \"lastName\": \"Bell\",\r\n        \"emailId\": \"john.bell@gmail.com\",\r\n        \"address\": \"Mumbai\",\r\n        \"employeeStatus\": \"ACTIVE\",\r\n        \"updatedDate\": \"2020-07-03T00:00:00.000+00:00\",\r\n\t\t\"deptId\" : 101\r\n    }\r\n\t,\r\n    {\r\n        \"firstName\": \"Sheldon\",\r\n        \"lastName\": \"Cooper\",\r\n        \"emailId\": \"sheldon.cooper@gmail.com\",\r\n        \"address\": \"Bangalore\",\r\n        \"employeeStatus\": \"ACTIVE\",\r\n        \"updatedDate\": \"2020-07-03T00:00:00.000+00:00\",\r\n\t\t\"deptId\" : 102\r\n    }\r\n\t,\r\n\t{\r\n        \"firstName\": \"Leonard\",\r\n        \"lastName\": \"Hofstader\",\r\n        \"emailId\": \"leonard.hofstader@gmail.com\",\r\n        \"address\": \"Bangalore\",\r\n        \"employeeStatus\": \"ACTIVE\",\r\n        \"updatedDate\": \"2020-07-03T00:00:00.000+00:00\",\r\n\t\t\"deptId\" : 103\r\n    }\r\n\t,\r\n    {\r\n        \"firstName\": \"Chandler\",\r\n        \"lastName\": \"Bing\",\r\n        \"emailId\": \"chandler.bing@gmail.com\",\r\n        \"address\": \"Bangalore\",\r\n        \"employeeStatus\": \"ACTIVE\",\r\n        \"updatedDate\": \"2020-07-03T00:00:00.000+00:00\",\r\n\t\t\"deptId\" : 104\r\n    }\r\n\t,\r\n    {\r\n        \"firstName\": \"Joey\",\r\n        \"lastName\": \"Tribbiani\",\r\n        \"emailId\": \"joey.tribbiani@gmail.com\",\r\n        \"address\": \"Delhi\",\r\n        \"employeeStatus\": \"ACTIVE\",\r\n        \"updatedDate\": \"2020-07-03T00:00:00.000+00:00\",\r\n\t\t\"deptId\" : 103\r\n    }\r\n\t,\r\n    {\r\n        \"firstName\": \"Ross\",\r\n        \"lastName\": \"Geller\",\r\n        \"emailId\": \"ross.geller@gmail.com\",\r\n        \"address\": \"Delhi\",\r\n        \"employeeStatus\": \"ACTIVE\",\r\n        \"updatedDate\": \"2020-07-03T00:00:00.000+00:00\",\r\n\t\t\"deptId\" : 104\r\n    }\r\n]",
+					"raw": "[\r\n\t{\r\n        \"firstName\": \"Santosh\",\r\n        \"lastName\": \"Yadav\",\r\n        \"emailId\": \"santosh.yadav@gmail.com\",\r\n        \"address\": \"Mumbai\",\r\n        \"employeeStatus\": \"ACTIVE\",\r\n        \"updatedDate\": \"2020-07-10T00:00:00.000+00:00\",\r\n\t\t\"deptName\": \"HR\"\r\n    }\r\n\t,\r\n\t{\r\n        \"firstName\": \"Albert\",\r\n        \"lastName\": \"Einstein\",\r\n        \"emailId\": \"albert.einstein@gmail.com\",\r\n        \"address\": \"Pune\",\r\n        \"employeeStatus\": \"ACTIVE\",\r\n        \"updatedDate\": \"2020-07-10T00:00:00.000+00:00\",\r\n\t\t\"deptName\": \"R&D\"\r\n    }\r\n\t,\r\n    {\r\n        \"firstName\": \"John\",\r\n        \"lastName\": \"Bell\",\r\n        \"emailId\": \"john.bell@gmail.com\",\r\n        \"address\": \"Mumbai\",\r\n        \"employeeStatus\": \"ACTIVE\",\r\n        \"updatedDate\": \"2020-07-10T00:00:00.000+00:00\",\r\n\t\t\"deptName\": \"Marketing\"\r\n    }\r\n\t,\r\n    {\r\n        \"firstName\": \"Sheldon\",\r\n        \"lastName\": \"Cooper\",\r\n        \"emailId\": \"sheldon.cooper@gmail.com\",\r\n        \"address\": \"Bangalore\",\r\n        \"employeeStatus\": \"ACTIVE\",\r\n        \"updatedDate\": \"2020-07-10T00:00:00.000+00:00\",\r\n\t\t\"deptName\": \"R&D\"\r\n    }\r\n\t,\r\n\t{\r\n        \"firstName\": \"Leonard\",\r\n        \"lastName\": \"Hofstader\",\r\n        \"emailId\": \"leonard.hofstader@gmail.com\",\r\n        \"address\": \"Bangalore\",\r\n        \"employeeStatus\": \"ACTIVE\",\r\n        \"updatedDate\": \"2020-07-10T00:00:00.000+00:00\",\r\n\t\t\"deptName\": \"Account\"\r\n    }\r\n\t,\r\n    {\r\n        \"firstName\": \"Chandler\",\r\n        \"lastName\": \"Bing\",\r\n        \"emailId\": \"chandler.bing@gmail.com\",\r\n        \"address\": \"Bangalore\",\r\n        \"employeeStatus\": \"ACTIVE\",\r\n        \"updatedDate\": \"2020-07-10T00:00:00.000+00:00\",\r\n\t\t\"deptName\": \"Account\"\r\n    }\r\n\t,\r\n    {\r\n        \"firstName\": \"Joey\",\r\n        \"lastName\": \"Tribbiani\",\r\n        \"emailId\": \"joey.tribbiani@gmail.com\",\r\n        \"address\": \"Delhi\",\r\n        \"employeeStatus\": \"ACTIVE\",\r\n        \"updatedDate\": \"2020-07-10T00:00:00.000+00:00\",\r\n\t\t\"deptName\": \"Marketing\"\r\n    }\r\n\t,\r\n    {\r\n        \"firstName\": \"Ross\",\r\n        \"lastName\": \"Geller\",\r\n        \"emailId\": \"ross.geller@gmail.com\",\r\n        \"address\": \"Delhi\",\r\n        \"employeeStatus\": \"ACTIVE\",\r\n        \"updatedDate\": \"2020-07-10T00:00:00.000+00:00\",\r\n\t\t\"deptName\": \"R&D\"\r\n    }\r\n]",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -165,7 +165,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "\r\n\t{\r\n        \"firstName\": \"Jimmi\",\r\n        \"lastName\": \"Sweeny\",\r\n        \"emailId\": \"Jimmi.Sweeny@gmail.com\",\r\n        \"address\": \"Mumbai\",\r\n        \"employeeStatus\": \"ACTIVE\",\r\n        \"updatedDate\": \"2020-07-06T00:00:00.000+00:00\",\r\n\t\t    \"deptId\" : 104\r\n    }\r\n",
+					"raw": "{\r\n        \"firstName\": \"Jimmi\",\r\n        \"lastName\": \"Sweeny\",\r\n        \"emailId\": \"Jimmi.Sweeny@gmail.com\",\r\n        \"address\": \"Mumbai\",\r\n        \"employeeStatus\": \"ACTIVE\",\r\n        \"updatedDate\": \"2020-07-10T11:00:00.000+00:00\",\r\n        \"deptName\":\"HR\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -227,7 +227,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "\r\n\t{\r\n        \"firstName\": \"Jimmi\",\r\n        \"lastName\": \"Sweeny\",\r\n        \"emailId\": \"Jimmi.Sweeny@gmail.com\",\r\n        \"address\": \"Mumbai\",\r\n        \"employeeStatus\": \"INACTIVE\",\r\n        \"updatedDate\": \"2020-07-06T00:00:00.000+00:00\",\r\n\t\t    \"deptId\" : 104\r\n    }\r\n",
+					"raw": "\r\n\t{\r\n        \"firstName\": \"Jimmi\",\r\n        \"lastName\": \"Sweeny\",\r\n        \"emailId\": \"Jimmi.Sweeny@gmail.com\",\r\n        \"address\": \"Mumbai\",\r\n        \"employeeStatus\": \"INACTIVE\",\r\n        \"updatedDate\": \"2020-07-06T00:00:00.000+00:00\",\r\n        \"deptName\":\"HR\"\r\n    }\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -346,7 +346,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "[\r\n    {\r\n        \"deptId\": 101,\r\n        \"deptName\": \"HR\"\r\n    }\r\n\t,\r\n    {\r\n        \"deptId\": 102,\r\n        \"deptName\": \"R&D\"\r\n    }\r\n\t,\r\n    {\r\n        \"deptId\": 103,\r\n        \"deptName\": \"Marketing\"\r\n    }\r\n\t,\r\n    {\r\n        \"deptId\": 104,\r\n        \"deptName\": \"Account\"\r\n    }\r\n]",
+					"raw": "[\r\n    {\r\n        \"deptName\": \"HR\"\r\n    }\r\n\t,\r\n    {\r\n        \"deptName\": \"R&D\"\r\n    }\r\n\t,\r\n    {\r\n        \"deptName\": \"Marketing\"\r\n    }\r\n\t,\r\n    {\r\n        \"deptName\": \"Account\"\r\n    }\r\n]",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -354,11 +354,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{base_url}}api/v1/departments/all",
+					"raw": "{{base_url}}/api/v1/departments/all",
 					"host": [
-						"{{base_url}}api"
+						"{{base_url}}"
 					],
 					"path": [
+						"api",
 						"v1",
 						"departments",
 						"all"
@@ -398,7 +399,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "\r\n    {\r\n        \"deptId\": 105,\r\n        \"deptName\": \"Account\"\r\n    }",
+					"raw": "{\r\n        \"deptName\": \"New\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -430,7 +431,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NDA0MDcwNiwiaWF0IjoxNTk0MDIyNzA2fQ.U9j6xQJOx0vJa_jLJ3ALyQU5i9zWL6aYj8csrPTStdePKC09UyhwcGgqxydq0E1UjBV3BI4M7A_q0gzl7dtuxQ",
+						"value": "Bearer {{token}}",
 						"type": "text"
 					}
 				],
