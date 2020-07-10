@@ -20,13 +20,21 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.avaya.acsp.ems_demo.exception.ResourceNotFoundException;
 import com.avaya.acsp.ems_demo.model.Department;
+import com.avaya.acsp.ems_demo.model.Employee;
 import com.avaya.acsp.ems_demo.repository.DepartmentRepository;
+import com.avaya.acsp.ems_demo.repository.EmployeeRepository;
+import com.avaya.acsp.ems_demo.service.EmployeeService;
 
 @RestController
 @RequestMapping("/api/v1/departments")
 public class DepartmentController {
 	@Autowired
 	private DepartmentRepository departmentRepository;
+
+	@Autowired
+	private EmployeeService employeeService;
+	@Autowired
+	private EmployeeRepository employeeRepository;
 
 	@GetMapping("/all")
 	public List<Department> getAllDepartments() {
@@ -65,12 +73,38 @@ public class DepartmentController {
 		return ResponseEntity.ok(updatedDepartment);
 	}
 
-	@DeleteMapping("/{id}")
-	public Map<String, Boolean> deleteDepartment(@PathVariable(value = "id") int departmentId)
+	@DeleteMapping("/{dept_id}")
+	public Map<String, Boolean> deleteDepartment(@PathVariable(value = "dept_id") int departmentId)
 			throws ResourceNotFoundException {
 		Department department = departmentRepository.findById(departmentId).orElseThrow(
 				() -> new ResourceNotFoundException("Department not found for this id :: " + departmentId));
 
+		List<Employee> employees = employeeService.getAllEmployeesByDeptName(department.getDeptName());
+		for (Employee employee : employees) {
+			employee.setDepartment(null);
+		}
+		
+		employeeRepository.saveAll(employees);
+		departmentRepository.delete(department);
+		Map<String, Boolean> response = new HashMap<>();
+		response.put("deleted", Boolean.TRUE);
+		return response;
+	}
+
+	@DeleteMapping("/name/{name}")
+	public Map<String, Boolean> deleteDepartmentByName(@PathVariable(value = "name") String departmentName)
+			throws ResourceNotFoundException {
+		Department department = departmentRepository.findByDeptName(departmentName);
+		if (department == null) {
+			new ResourceNotFoundException("Department not found for this id :: " + departmentName);
+		}
+		
+		List<Employee> employees = employeeService.getAllEmployeesByDeptName(department.getDeptName());
+		for (Employee employee : employees) {
+			employee.setDepartment(null);
+		}
+		
+		employeeRepository.saveAll(employees);
 		departmentRepository.delete(department);
 		Map<String, Boolean> response = new HashMap<>();
 		response.put("deleted", Boolean.TRUE);
