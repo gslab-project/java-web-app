@@ -107,7 +107,7 @@ public class Employee {
 	}
 
 	@ManyToOne
-	@JoinColumn(name = "dept_Id")
+	@JoinColumn(name = "dept_id")
 	public Department getDepartment() {
 		return department;
 	}

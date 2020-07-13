@@ -83,7 +83,7 @@ public class DepartmentController {
 		for (Employee employee : employees) {
 			employee.setDepartment(null);
 		}
-		
+
 		employeeRepository.saveAll(employees);
 		departmentRepository.delete(department);
 		Map<String, Boolean> response = new HashMap<>();
@@ -98,12 +98,12 @@ public class DepartmentController {
 		if (department == null) {
 			new ResourceNotFoundException("Department not found for this id :: " + departmentName);
 		}
-		
+
 		List<Employee> employees = employeeService.getAllEmployeesByDeptName(department.getDeptName());
 		for (Employee employee : employees) {
 			employee.setDepartment(null);
 		}
-		
+
 		employeeRepository.saveAll(employees);
 		departmentRepository.delete(department);
 		Map<String, Boolean> response = new HashMap<>();
