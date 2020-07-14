@@ -2,6 +2,8 @@ package com.avaya.acsp.ems_demo.controller;
 
 import java.util.Objects;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -23,6 +25,9 @@ import com.avaya.acsp.ems_demo.model.JwtResponse;
 @RestController
 @CrossOrigin
 public class JwtAuthenticationController {
+
+	Logger log = LoggerFactory.getLogger(JwtAuthenticationController.class);
+
 	@Autowired
 	private AuthenticationManager authenticationManager;
 
@@ -35,13 +40,15 @@ public class JwtAuthenticationController {
 	@RequestMapping(value = "/authenticate", method = RequestMethod.POST)
 	public ResponseEntity<?> generateAuthenticationToken(@RequestBody JwtRequest authenticationRequest)
 			throws Exception {
-
+		log.info("User Authentication started");
 		authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
 
 		final UserDetails userDetails = jwtInMemoryUserDetailsService
 				.loadUserByUsername(authenticationRequest.getUsername());
 
 		final String token = jwtTokenUtil.generateToken(userDetails);
+
+		log.info("User Authentication Successful");
 
 		return ResponseEntity.ok(new JwtResponse(token));
 	}

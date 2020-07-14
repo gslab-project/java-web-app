@@ -12,6 +12,8 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -35,6 +37,9 @@ import com.avaya.acsp.ems_demo.repository.EmployeeRepository;
 @RestController
 @RequestMapping("/api/v1/employees")
 public class EmployeeController {
+
+	Logger log = LoggerFactory.getLogger(EmployeeController.class);
+
 	@Autowired
 	private EmployeeRepository employeeRepository;
 	@Autowired
@@ -68,6 +73,9 @@ public class EmployeeController {
 	@GetMapping("/{id}")
 	public ResponseEntity<Employee> getEmployeeById(@PathVariable(value = "id") int employeeId)
 			throws ResourceNotFoundException {
+
+		log.info("fetching details of employee with id {}",employeeId);
+
 		Employee employee = employeeRepository.findById(employeeId)
 				.orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + employeeId));
 		return ResponseEntity.ok().body(employee);
@@ -113,6 +121,9 @@ public class EmployeeController {
 	@PutMapping("/{id}")
 	public ResponseEntity<Employee> updateEmployee(@PathVariable(value = "id") int employeeId,
 			@Validated @RequestBody Employee employeeDetails) throws ResourceNotFoundException {
+
+		log.info("Updating employee with id {}",employeeId);
+
 		Employee employee = employeeRepository.findById(employeeId)
 				.orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + employeeId));
 
@@ -120,6 +131,9 @@ public class EmployeeController {
 		employee.setLastName(employeeDetails.getLastName());
 		employee.setFirstName(employeeDetails.getFirstName());
 		final Employee updatedEmployee = employeeRepository.save(employee);
+
+		log.info("Employee with id {} update successful ",employeeId);
+
 		return ResponseEntity.ok(updatedEmployee);
 	}
 
@@ -134,6 +148,9 @@ public class EmployeeController {
 		employeeRepository.save(employee);
 		Map<String, Boolean> response = new HashMap<>();
 		response.put("deleted", Boolean.TRUE);
+
+		log.info("Employee {} deleted ",employeeId);
+
 		return response;
 	}
 }

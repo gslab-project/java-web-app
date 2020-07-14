@@ -6,6 +6,8 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -28,6 +30,9 @@ import com.avaya.acsp.ems_demo.service.EmployeeService;
 @RestController
 @RequestMapping("/api/v1/departments")
 public class DepartmentController {
+
+	Logger log = LoggerFactory.getLogger(DepartmentController.class);
+
 	@Autowired
 	private DepartmentRepository departmentRepository;
 
@@ -44,6 +49,8 @@ public class DepartmentController {
 	@GetMapping("/{id}")
 	public ResponseEntity<Department> getDepartmentById(@PathVariable(value = "id") int departmentId)
 			throws ResourceNotFoundException {
+
+		log.info("Fetching department id {} details",departmentId);
 		Department department = departmentRepository.findById(departmentId).orElseThrow(
 				() -> new ResourceNotFoundException("Department not found for this id :: " + departmentId));
 		return ResponseEntity.ok().body(department);
@@ -70,6 +77,9 @@ public class DepartmentController {
 
 		department.setDeptName(departmentDetails.getDeptName());
 		final Department updatedDepartment = departmentRepository.save(department);
+
+		log.info("department id {} updated successfully",departmentId);
+
 		return ResponseEntity.ok(updatedDepartment);
 	}
 
@@ -88,6 +98,8 @@ public class DepartmentController {
 		departmentRepository.delete(department);
 		Map<String, Boolean> response = new HashMap<>();
 		response.put("deleted", Boolean.TRUE);
+
+		log.info("department id {} deleted",departmentId);
 		return response;
 	}
 
@@ -108,6 +120,9 @@ public class DepartmentController {
 		departmentRepository.delete(department);
 		Map<String, Boolean> response = new HashMap<>();
 		response.put("deleted", Boolean.TRUE);
+
+		log.info("department {} deleted",departmentName);
+
 		return response;
 	}
 }
